@@ -1,0 +1,67 @@
+{
+    "name": "jobmetric/pax",
+    "description": "A secure and intuitive currency exchange platform designed to facilitate seamless transactions and promote peace of mind in financial exchanges.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "jobmetric",
+        "package",
+        "pax",
+        "exchange",
+        "currency",
+        "trading",
+        "transactions",
+        "market",
+        "rates",
+        "wallet",
+        "financial",
+        "security",
+        "conversion"
+    ],
+    "homepage": "https://doc.jobmetric.net/package/pax",
+    "authors": [
+        {
+            "name": "Majid Mohammadian",
+            "email": "majeedmohammadian@gmail.com",
+            "homepage": "https://www.linkedin.com/in/majidmohammadian/",
+            "role": "Full Stack Developer"
+        }
+    ],
+    "require": {
+        "php": ">=8.0.1",
+        "ext-json": "*",
+        "laravel/framework": ">=9.19",
+        "jobmetric/laravel-package-core": "^1.12"
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {
+            "JobMetric\\Pax\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JobMetric\\Pax\\PaxServiceProvider"
+            ],
+            "aliases": {
+                "Pax": "JobMetric\\Pax\\Facades\\Pax"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "support": {
+        "issues": "https://github.com/jobmetric/pax/issues",
+        "forum": "https://twitter.com/jobmetric",
+        "source": "https://github.com/jobmetric/pax"
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/majidmohammadian"
+        }
+    ]
+}
