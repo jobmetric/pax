@@ -2,12 +2,13 @@
 
 namespace JobMetric\Pax;
 
-use JobMetric\Pax\Providers\EventServiceProvider;
 use JobMetric\PackageCore\Enums\RegisterClassTypeEnum;
 use JobMetric\PackageCore\Exceptions\RegisterClassTypeNotFoundException;
 use JobMetric\PackageCore\PackageCore;
 use JobMetric\PackageCore\PackageCoreServiceProvider;
 use JobMetric\Panelio\Facades\Panelio;
+use JobMetric\Panelio\RouteRegistry;
+use JobMetric\Pax\Providers\EventServiceProvider;
 
 class PaxServiceProvider extends PackageCoreServiceProvider
 {
@@ -19,9 +20,13 @@ class PaxServiceProvider extends PackageCoreServiceProvider
         $package->name('pax')
             ->hasConfig()
             ->hasTranslation()
-            ->hasRoute()
             ->registerClass('event', EventServiceProvider::class, RegisterClassTypeEnum::REGISTER())
             ->registerClass('Pax', Pax::class, RegisterClassTypeEnum::SINGLETON());
+    }
+
+    public function afterRegisterPackage(): void
+    {
+        RouteRegistry::addPanel($this->package);
     }
 
     public function afterBootPackage(): void
