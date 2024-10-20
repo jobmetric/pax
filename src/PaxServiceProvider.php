@@ -32,11 +32,11 @@ class PaxServiceProvider extends PackageCoreServiceProvider
     public function afterBootPackage(): void
     {
         Panelio::addPanel('pax', [
-            'name' => config('pax.panel_name'),
+            'name' => 'pax::base.panel_name',
             'namespace' => 'JobMetric\Pax\Http\Controllers',
             'args' => [
                 'description' => trans('pax::base.description'),
-                'icon' => 'fas fa-user-shield',
+                'icon' => '<i class="ki-duotone ki-abstract-4 fs-2x"><span class="path1"></span><span class="path2"></span></i>',
             ],
             'permission' => 'pax',
             'position' => 0,

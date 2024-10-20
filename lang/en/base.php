@@ -12,6 +12,8 @@ return [
     |
     */
 
+    'panel_name' => 'Exchange (Pax)',
+
     'description' => 'A secure and intuitive currency exchange platform designed to facilitate seamless transactions and promote peace of mind in financial exchanges.',
 
     'sections' => [
