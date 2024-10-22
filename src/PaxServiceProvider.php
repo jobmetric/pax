@@ -3,6 +3,7 @@
 namespace JobMetric\Pax;
 
 use JobMetric\PackageCore\Enums\RegisterClassTypeEnum;
+use JobMetric\PackageCore\Exceptions\AssetFolderNotFoundException;
 use JobMetric\PackageCore\Exceptions\RegisterClassTypeNotFoundException;
 use JobMetric\PackageCore\Exceptions\ViewFolderNotFoundException;
 use JobMetric\PackageCore\PackageCore;
@@ -16,10 +17,12 @@ class PaxServiceProvider extends PackageCoreServiceProvider
     /**
      * @throws RegisterClassTypeNotFoundException
      * @throws ViewFolderNotFoundException
+     * @throws AssetFolderNotFoundException
      */
     public function configuration(PackageCore $package): void
     {
         $package->name('pax')
+            ->hasAsset()
             ->hasConfig()
             ->hasTranslation()
             ->hasView()
