@@ -39,4 +39,8 @@ return [
         ],
     ],
 
+    'dashboard' => [
+        'title' => 'Exchange Dashboard (Pax)'
+    ]
+
 ];

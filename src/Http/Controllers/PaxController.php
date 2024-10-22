@@ -4,6 +4,7 @@ namespace JobMetric\Pax\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use JobMetric\Panelio\Http\Controllers\Controller;
 
 class PaxController extends Controller
 {
@@ -14,8 +15,10 @@ class PaxController extends Controller
      *
      * @return View
      */
-    public function index(Request $request): View
+    public function index(Request $request)
     {
-        return view('pax::index');
+        DomiTitle(trans('pax::base.dashboard.title'));
+
+        return view('pax::dashboard');
     }
 }

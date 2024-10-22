@@ -4,6 +4,7 @@ namespace JobMetric\Pax;
 
 use JobMetric\PackageCore\Enums\RegisterClassTypeEnum;
 use JobMetric\PackageCore\Exceptions\RegisterClassTypeNotFoundException;
+use JobMetric\PackageCore\Exceptions\ViewFolderNotFoundException;
 use JobMetric\PackageCore\PackageCore;
 use JobMetric\PackageCore\PackageCoreServiceProvider;
 use JobMetric\Panelio\Facades\Panelio;
@@ -14,12 +15,14 @@ class PaxServiceProvider extends PackageCoreServiceProvider
 {
     /**
      * @throws RegisterClassTypeNotFoundException
+     * @throws ViewFolderNotFoundException
      */
     public function configuration(PackageCore $package): void
     {
         $package->name('pax')
             ->hasConfig()
             ->hasTranslation()
+            ->hasView()
             ->registerClass('event', EventServiceProvider::class, RegisterClassTypeEnum::REGISTER())
             ->registerClass('Pax', Pax::class, RegisterClassTypeEnum::SINGLETON());
     }
