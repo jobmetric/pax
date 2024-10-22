@@ -42,7 +42,7 @@ class PaxServiceProvider extends PackageCoreServiceProvider
                 'icon' => '<i class="ki-duotone ki-abstract-4 fs-2x"><span class="path1"></span><span class="path2"></span></i>',
             ],
             'permission' => 'pax',
-            'position' => 0,
+            'position' => 50,
         ]);
 
         Panelio::addSection('pax', 'content', [
