@@ -11,5 +11,15 @@ class EventServiceProvider extends ServiceProvider
      *
      * @var array<class-string, array<int, class-string>>
      */
-    protected $listen = [];
+    protected $listen = [
+        \JobMetric\Pax\Events\PaxBootedEvent::class => [
+            \JobMetric\Pax\Listeners\AddPanelMenuListeners::class,
+        ],
+
+        \JobMetric\Category\Events\CategoryTypeEvent::class => [
+            \JobMetric\Pax\Listeners\AddCategoryTypePaxProductCategoryListeners::class,
+            \JobMetric\Pax\Listeners\AddCategoryTypeBlogCategoryListeners::class,
+            \JobMetric\Pax\Listeners\AddCategoryTypeGroupCustomerListeners::class,
+        ],
+    ];
 }
