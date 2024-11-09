@@ -16,10 +16,10 @@ class EventServiceProvider extends ServiceProvider
             \JobMetric\Pax\Listeners\AddPanelMenuListeners::class,
         ],
 
-        \JobMetric\Category\Events\CategoryTypeEvent::class => [
-            \JobMetric\Pax\Listeners\AddCategoryTypePaxProductCategoryListeners::class,
-            \JobMetric\Pax\Listeners\AddCategoryTypeBlogCategoryListeners::class,
-            \JobMetric\Pax\Listeners\AddCategoryTypeGroupCustomerListeners::class,
+        \JobMetric\Taxonomy\Events\TaxonomyTypeEvent::class => [
+            \JobMetric\Pax\Listeners\AddTaxonomyTypePaxProductCategoryListeners::class,
+            \JobMetric\Pax\Listeners\AddTaxonomyTypeBlogCategoryListeners::class,
+            \JobMetric\Pax\Listeners\AddTaxonomyTypeGroupCustomerListeners::class,
         ],
     ];
 }

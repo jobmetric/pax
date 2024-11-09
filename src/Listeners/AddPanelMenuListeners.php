@@ -84,7 +84,7 @@ class AddPanelMenuListeners
         Panelio::addMenu('pax', 'content', [
             'type' => 'link',
             'name' => 'pax::base.sections.content.menus.pax_product_category',
-            'link' => route('category.{type}.index', [
+            'link' => route('taxonomy.{type}.index', [
                 'panel' => 'pax',
                 'section' => 'content',
                 'type' => 'pax.product_category',
@@ -104,7 +104,7 @@ class AddPanelMenuListeners
         Panelio::addMenu('pax', 'content', [
             'type' => 'link',
             'name' => 'pax::base.sections.content.menus.pax_blog_category',
-            'link' => route('category.{type}.index', [
+            'link' => route('taxonomy.{type}.index', [
                 'panel' => 'pax',
                 'section' => 'content',
                 'type' => 'pax.blog_category',
@@ -154,7 +154,7 @@ class AddPanelMenuListeners
         Panelio::addMenu('pax', 'account', [
             'type' => 'link',
             'name' => 'pax::base.sections.account.menus.pax_group_customer',
-            'link' => route('category.{type}.index', [
+            'link' => route('taxonomy.{type}.index', [
                 'panel' => 'pax',
                 'section' => 'account',
                 'type' => 'pax.group_customer',

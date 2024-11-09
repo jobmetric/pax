@@ -2,34 +2,34 @@
 
 namespace JobMetric\Pax\Listeners;
 
-use JobMetric\Category\Events\CategoryTypeEvent;
+use JobMetric\Taxonomy\Events\TaxonomyTypeEvent;
 
-class AddCategoryTypeBlogCategoryListeners
+class AddTaxonomyTypeBlogCategoryListeners
 {
     /**
      * Handle the event.
      */
-    public function handle(CategoryTypeEvent $event): void
+    public function handle(TaxonomyTypeEvent $event): void
     {
         $event->addType([
-            'type' => 'pax.blog_category',
+            'type' => 'pax.blog_taxonomy',
             'args' => [
-                'label' => 'pax::base.category_type.pax_blog_category.label',
-                'description' => 'pax::base.category_type.pax_blog_category.description',
+                'label' => 'pax::base.taxonomy_type.pax_blog_taxonomy.label',
+                'description' => 'pax::base.taxonomy_type.pax_blog_taxonomy.description',
                 'hierarchical' => true,
                 'translation' => [
                     'fields' => [
                         'name' => [
                             'type' => 'text',
-                            'label' => 'pax::base.category_type.pax_blog_category.translation.name.label',
-                            'info' => 'pax::base.category_type.pax_blog_category.translation.name.info',
-                            'placeholder' => 'pax::base.category_type.pax_blog_category.translation.name.placeholder',
+                            'label' => 'pax::base.taxonomy_type.pax_blog_taxonomy.translation.name.label',
+                            'info' => 'pax::base.taxonomy_type.pax_blog_taxonomy.translation.name.info',
+                            'placeholder' => 'pax::base.taxonomy_type.pax_blog_taxonomy.translation.name.placeholder',
                         ],
                         'description' => [
                             'type' => 'textarea',
-                            'label' => 'pax::base.category_type.pax_blog_category.translation.description.label',
-                            'info' => 'pax::base.category_type.pax_blog_category.translation.description.info',
-                            'placeholder' => 'pax::base.category_type.pax_blog_category.translation.description.placeholder',
+                            'label' => 'pax::base.taxonomy_type.pax_blog_taxonomy.translation.description.label',
+                            'info' => 'pax::base.taxonomy_type.pax_blog_taxonomy.translation.description.info',
+                            'placeholder' => 'pax::base.taxonomy_type.pax_blog_taxonomy.translation.description.placeholder',
                             'validation' => 'string|nullable|sometimes',
                         ],
                     ],
@@ -39,9 +39,9 @@ class AddCategoryTypeBlogCategoryListeners
                     'column_number' => [
                         'type' => 'number',
                         'default' => 1,
-                        'label' => 'pax::base.category_type.pax_blog_category.metadata.column_number.label',
-                        'info' => 'pax::base.category_type.pax_blog_category.metadata.column_number.info',
-                        'placeholder' => 'pax::base.category_type.pax_blog_category.metadata.column_number.placeholder',
+                        'label' => 'pax::base.taxonomy_type.pax_blog_taxonomy.metadata.column_number.label',
+                        'info' => 'pax::base.taxonomy_type.pax_blog_taxonomy.metadata.column_number.info',
+                        'placeholder' => 'pax::base.taxonomy_type.pax_blog_taxonomy.metadata.column_number.placeholder',
                         'validation' => 'integer|min:1|max:4',
                     ],
                 ],

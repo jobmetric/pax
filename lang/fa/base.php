@@ -22,9 +22,9 @@ return [
             'title' => 'مدیریت محتوا',
             'menus' => [
                 'group_product' => 'محصول و خدمت',
-                'pax_product_category' => 'دسته‌بندی ارزها',
+                'pax_product_taxonomy' => 'دسته‌بندی ارزها',
                 'group_content' => 'محتوا',
-                'pax_blog_category' => 'دسته‌بندی بلاگ',
+                'pax_blog_taxonomy' => 'دسته‌بندی بلاگ',
                 'group_menu' => 'منو و لیست',
             ],
         ],
@@ -62,8 +62,8 @@ return [
         'title' => 'داشبورد صرافی (Pax)'
     ],
 
-    'category_type' => [
-        'pax_product_category' => [
+    'taxonomy_type' => [
+        'pax_product_taxonomy' => [
             'label' => 'دسته‌بندی ارزها',
             'description' => 'توضیحات دسته‌بندی ارزها',
             'translation' => [
@@ -86,7 +86,7 @@ return [
                 ],
             ],
         ],
-        'pax_blog_category' => [
+        'pax_blog_taxonomy' => [
             'label' => 'دسته‌بندی بلاگ',
             'description' => 'توضیحات دسته‌بندی بلاگ',
             'translation' => [
