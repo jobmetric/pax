@@ -23,6 +23,7 @@ return [
             "menus" => [
                 "group_product" => "محصول و خدمت",
                 "pax_product_category" => "دسته‌بندی ارزها",
+                "pax_product_tag" => "تگ‌های ارز",
                 "group_content" => "محتوا",
                 "pax_blog_category" => "دسته‌بندی بلاگ",
                 "group_menu" => "منو و لیست",
@@ -139,6 +140,22 @@ return [
                     "label" => "توضیحات",
                     "info" => "توضیحات منو",
                     "placeholder" => "توضیحات منو را وارد کنید",
+                ],
+            ],
+        ],
+        "pax_product_tag" => [
+            "label" => "مدیریت تگ‌های ارز",
+            "description" => "توضیحات تگ‌های ارز",
+            "translation" => [
+                "name" => [
+                    "label" => "نام",
+                    "info" => "نام تگ",
+                    "placeholder" => "نام تگ را وارد کنید",
+                ],
+                "description" => [
+                    "label" => "توضیحات",
+                    "info" => "توضیحات تگ",
+                    "placeholder" => "توضیحات تگ را وارد کنید",
                 ],
             ],
         ],

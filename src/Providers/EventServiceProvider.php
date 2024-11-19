@@ -20,7 +20,8 @@ class EventServiceProvider extends ServiceProvider
             \JobMetric\Pax\Listeners\AddTaxonomyTypePaxProductCategoryListeners::class,
             \JobMetric\Pax\Listeners\AddTaxonomyTypeBlogCategoryListeners::class,
             \JobMetric\Pax\Listeners\AddTaxonomyTypeGroupCustomerListeners::class,
-            \JobMetric\Pax\Listeners\AddTaxonomyTypeMenuListeners::class
+            \JobMetric\Pax\Listeners\AddTaxonomyTypeMenuListeners::class,
+            \JobMetric\Pax\Listeners\AddTaxonomyTypePaxProductTagListeners::class,
         ],
     ];
 }

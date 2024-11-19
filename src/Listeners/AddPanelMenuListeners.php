@@ -95,6 +95,19 @@ class AddPanelMenuListeners
         ]);
 
         Panelio::addMenu('pax', 'content', [
+            'type' => 'link',
+            'name' => 'pax::base.sections.content.menus.pax_product_tag',
+            'link' => route('taxonomy.{type}.index', [
+                'panel' => 'pax',
+                'section' => 'content',
+                'type' => 'pax.product_tag',
+            ]),
+            'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
+            'permission' => '',
+            'position' => 10,
+        ]);
+
+        Panelio::addMenu('pax', 'content', [
             'type' => 'group',
             'name' => 'pax::base.sections.content.menus.group_content',
             'permission' => '',

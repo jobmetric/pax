@@ -142,6 +142,22 @@ return [
                 ],
             ],
         ],
+        "pax_product_tag" => [
+            "label" => "Currency Tags",
+            "description" => "Description of currency tags",
+            "translation" => [
+                "name" => [
+                    "label" => "Name",
+                    "info" => "Name of currency tags",
+                    "placeholder" => "Enter the name of currency tags",
+                ],
+                "description" => [
+                    "label" => "Description",
+                    "info" => "Description of currency tags",
+                    "placeholder" => "Enter the description of currency tags",
+                ],
+            ],
+        ],
     ],
 
 ];
