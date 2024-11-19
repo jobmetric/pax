@@ -121,6 +121,19 @@ class AddPanelMenuListeners
             'position' => 200,
         ]);
 
+        Panelio::addMenu('pax', 'content', [
+            'type' => 'link',
+            'name' => 'pax::base.sections.content.menus.pax_menu_manager',
+            'link' => route('taxonomy.{type}.index', [
+                'panel' => 'pax',
+                'section' => 'content',
+                'type' => 'pax.menu',
+            ]),
+            'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
+            'permission' => '',
+            'position' => 201,
+        ]);
+
         // added group menu for sale section
         Panelio::addMenu('pax', 'sell', [
             'type' => 'group',
