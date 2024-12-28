@@ -2,15 +2,16 @@
 
 namespace JobMetric\Pax;
 
+use Illuminate\Support\Facades\App;
 use JobMetric\PackageCore\Enums\RegisterClassTypeEnum;
 use JobMetric\PackageCore\Exceptions\AssetFolderNotFoundException;
 use JobMetric\PackageCore\Exceptions\RegisterClassTypeNotFoundException;
 use JobMetric\PackageCore\Exceptions\ViewFolderNotFoundException;
 use JobMetric\PackageCore\PackageCore;
 use JobMetric\PackageCore\PackageCoreServiceProvider;
-use JobMetric\Panelio\Facades\Panelio;
 use JobMetric\Panelio\RouteRegistry;
 use JobMetric\Pax\Events\PaxBootedEvent;
+use JobMetric\Pax\Events\PaxBootEvent;
 use JobMetric\Pax\Providers\EventServiceProvider;
 
 class PaxServiceProvider extends PackageCoreServiceProvider
@@ -38,6 +39,10 @@ class PaxServiceProvider extends PackageCoreServiceProvider
 
     public function afterBootPackage(): void
     {
-        event(new PaxBootedEvent);
+        event(new PaxBootEvent);
+
+        App::booted(function () {
+            event(new PaxBootedEvent);
+        });
     }
 }

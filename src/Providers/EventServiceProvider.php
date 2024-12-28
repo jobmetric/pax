@@ -12,16 +12,15 @@ class EventServiceProvider extends ServiceProvider
      * @var array<class-string, array<int, class-string>>
      */
     protected $listen = [
+        \JobMetric\Pax\Events\PaxBootEvent::class => [
+            \JobMetric\Pax\Listeners\AddSettingTypeListeners::class,
+            \JobMetric\Pax\Listeners\TaxonomyTypeCurrencyTypeListeners::class,
+            \JobMetric\Pax\Listeners\TaxonomyTypeCurrencyTagListeners::class,
+            \JobMetric\Pax\Listeners\TaxonomyTypeBlogCategoryListeners::class,
+            \JobMetric\Pax\Listeners\TaxonomyTypeCustomerGroupListeners::class,
+        ],
         \JobMetric\Pax\Events\PaxBootedEvent::class => [
             \JobMetric\Pax\Listeners\AddPanelMenuListeners::class,
         ],
-
-        /*\JobMetric\Taxonomy\Events\TaxonomyTypeEvent::class => [
-            \JobMetric\Pax\Listeners\AddTaxonomyTypePaxProductCategoryListeners::class,
-            \JobMetric\Pax\Listeners\AddTaxonomyTypeBlogCategoryListeners::class,
-            \JobMetric\Pax\Listeners\AddTaxonomyTypeGroupCustomerListeners::class,
-            \JobMetric\Pax\Listeners\AddTaxonomyTypeMenuListeners::class,
-            \JobMetric\Pax\Listeners\AddTaxonomyTypePaxProductTagListeners::class,
-        ],*/
     ];
 }

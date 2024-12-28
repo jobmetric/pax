@@ -22,12 +22,12 @@ return [
             "title" => "مدیریت محتوا",
             "menus" => [
                 "group_product" => "محصول و خدمت",
-                "pax_product_category" => "دسته‌بندی ارزها",
-                "pax_product_tag" => "تگ‌های ارز",
+                "currencies" => "لیست ارزها",
+                "currency_type" => "دسته‌بندی‌های ارزی",
+                "currency_tag" => "تگ‌های ارزی",
                 "group_content" => "محتوا",
-                "pax_blog_category" => "دسته‌بندی بلاگ",
-                "group_menu" => "منو و لیست",
-                "pax_menu_manager" => "مدیریت منوها",
+                "blog_post" => "پست بلاگ",
+                "blog_category" => "دسته‌بندی بلاگ",
             ],
         ],
         "sell" => [
@@ -35,7 +35,11 @@ return [
             "title" => "مدیریت فروش",
             "menus" => [
                 "group_sell" => "فروش",
+                "orders" => "سفارشات",
+                "invoices" => "فاکتورها",
                 "group_advertising_and_marketing" => "تبلیغات و بازاریابی",
+                "advertising" => "تبلیغات",
+                "campaigns" => "کمپین‌ها",
                 "group_financial_management" => "مدیریت مالی",
             ],
         ],
@@ -43,14 +47,16 @@ return [
             "name" => "حساب های کاربری",
             "title" => "حساب های کاربری",
             "menus" => [
-                "group_customer" => "مشتری‌ها",
-                "pax_group_customer" => "گروه مشتریان",
+                "group_customer" => "مشتری",
+                "customers" => "مشتری‌ها",
+                "customer_group" => "گروه‌های مشتریان",
             ],
         ],
         "system" => [
             "name" => "مدیریت",
             "title" => "مدیریت سیستم",
             "menus" => [
+                "configuration" => "تنظیمات",
                 "group_plugins_and_modules" => "افزونه‌ها و ماژول‌ها",
             ],
         ],
@@ -65,15 +71,10 @@ return [
     ],
 
     "taxonomy_type" => [
-        "pax_product_category" => [
+        "currency_type" => [
             "label" => "دسته‌بندی ارزها",
             "description" => "توضیحات دسته‌بندی ارزها",
             "translation" => [
-                "name" => [
-                    "label" => "نام",
-                    "info" => "نام دسته‌بندی ارزها",
-                    "placeholder" => "نام دسته‌بندی ارزها را وارد کنید",
-                ],
                 "description" => [
                     "label" => "توضیحات",
                     "info" => "توضیحات دسته‌بندی ارزها",
@@ -88,15 +89,14 @@ return [
                 ],
             ],
         ],
-        "pax_blog_category" => [
+        "currency_tag" => [
+            "label" => "تگ‌های ارز",
+            "description" => "توضیحات تگ‌های ارز",
+        ],
+        "blog_category" => [
             "label" => "دسته‌بندی بلاگ",
             "description" => "توضیحات دسته‌بندی بلاگ",
             "translation" => [
-                "name" => [
-                    "label" => "نام",
-                    "info" => "نام دسته‌بندی بلاگ",
-                    "placeholder" => "نام دسته‌بندی بلاگ را وارد کنید",
-                ],
                 "description" => [
                     "label" => "توضیحات",
                     "info" => "توضیحات دسته‌بندی بلاگ",
@@ -111,15 +111,10 @@ return [
                 ],
             ],
         ],
-        "pax_group_customer" => [
+        "customer_group" => [
             "label" => "گروه مشتریان",
-            "description" => "توضیحات گروه مشتریان",
+            "description" => "مدیریت گروه‌های مشتریان در صرافی",
             "translation" => [
-                "name" => [
-                    "label" => "نام",
-                    "info" => "نام گروه مشتریان",
-                    "placeholder" => "نام گروه مشتریان را وارد کنید",
-                ],
                 "description" => [
                     "label" => "توضیحات",
                     "info" => "توضیحات گروه مشتریان",
@@ -127,35 +122,20 @@ return [
                 ],
             ],
         ],
-        "pax_menu" => [
-            "label" => "مدیریت منوها",
-            "description" => "توضیحات مدیریت منوها",
-            "translation" => [
-                "name" => [
-                    "label" => "نام",
-                    "info" => "نام منو",
-                    "placeholder" => "نام منو را وارد کنید",
-                ],
-                "description" => [
-                    "label" => "توضیحات",
-                    "info" => "توضیحات منو",
-                    "placeholder" => "توضیحات منو را وارد کنید",
-                ],
-            ],
-        ],
-        "pax_product_tag" => [
-            "label" => "مدیریت تگ‌های ارز",
-            "description" => "توضیحات تگ‌های ارز",
-            "translation" => [
-                "name" => [
-                    "label" => "نام",
-                    "info" => "نام تگ",
-                    "placeholder" => "نام تگ را وارد کنید",
-                ],
-                "description" => [
-                    "label" => "توضیحات",
-                    "info" => "توضیحات تگ",
-                    "placeholder" => "توضیحات تگ را وارد کنید",
+    ],
+
+    "setting_type" => [
+        "pax_config" => [
+            "label" => "تنظیمات صرافی",
+            "description" => "تنظیمات صرافی",
+            "tab" => [
+                "general" => [
+                    "label" => "عمومی",
+                    "group_currency_label" => "تنظیمات ارزها",
+                    "product_limit" => "تعداد آیتم ها در هر صفحه",
+                    "comment" => "اجازه ثبت نظر",
+                    "min_gift_cart" => "حداقل کارت هدیه",
+                    "max_gift_cart" => "حداکثر کارت هدیه",
                 ],
             ],
         ],

@@ -83,11 +83,20 @@ class AddPanelMenuListeners
 
         Panelio::addMenu('pax', 'content', [
             'type' => 'link',
-            'name' => 'pax::base.sections.content.menus.pax_product_category',
+            'name' => 'pax::base.sections.content.menus.currencies',
+            'link' => 'javascript:void(0)',
+            'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
+            'permission' => '',
+            'position' => 5,
+        ]);
+
+        Panelio::addMenu('pax', 'content', [
+            'type' => 'link',
+            'name' => 'pax::base.sections.content.menus.currency_type',
             'link' => route('taxonomy.{type}.index', [
                 'panel' => 'pax',
                 'section' => 'content',
-                'type' => 'pax.product_category',
+                'type' => 'pax.currency_type',
             ]),
             'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
             'permission' => '',
@@ -96,15 +105,15 @@ class AddPanelMenuListeners
 
         Panelio::addMenu('pax', 'content', [
             'type' => 'link',
-            'name' => 'pax::base.sections.content.menus.pax_product_tag',
+            'name' => 'pax::base.sections.content.menus.currency_tag',
             'link' => route('taxonomy.{type}.index', [
                 'panel' => 'pax',
                 'section' => 'content',
-                'type' => 'pax.product_tag',
+                'type' => 'pax.currency_tag',
             ]),
             'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
             'permission' => '',
-            'position' => 10,
+            'position' => 5,
         ]);
 
         Panelio::addMenu('pax', 'content', [
@@ -116,7 +125,16 @@ class AddPanelMenuListeners
 
         Panelio::addMenu('pax', 'content', [
             'type' => 'link',
-            'name' => 'pax::base.sections.content.menus.pax_blog_category',
+            'name' => 'pax::base.sections.content.menus.blog_post',
+            'link' => 'javascript:void(0)',
+            'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
+            'permission' => '',
+            'position' => 105,
+        ]);
+
+        Panelio::addMenu('pax', 'content', [
+            'type' => 'link',
+            'name' => 'pax::base.sections.content.menus.blog_category',
             'link' => route('taxonomy.{type}.index', [
                 'panel' => 'pax',
                 'section' => 'content',
@@ -125,26 +143,6 @@ class AddPanelMenuListeners
             'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
             'permission' => '',
             'position' => 105,
-        ]);
-
-        Panelio::addMenu('pax', 'content', [
-            'type' => 'group',
-            'name' => 'pax::base.sections.content.menus.group_menu',
-            'permission' => '',
-            'position' => 200,
-        ]);
-
-        Panelio::addMenu('pax', 'content', [
-            'type' => 'link',
-            'name' => 'pax::base.sections.content.menus.pax_menu_manager',
-            'link' => route('taxonomy.{type}.index', [
-                'panel' => 'pax',
-                'section' => 'content',
-                'type' => 'pax.menu',
-            ]),
-            'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
-            'permission' => '',
-            'position' => 201,
         ]);
 
         // added group menu for sale section
@@ -156,8 +154,44 @@ class AddPanelMenuListeners
         ]);
 
         Panelio::addMenu('pax', 'sell', [
+            'type' => 'link',
+            'name' => 'pax::base.sections.sell.menus.orders',
+            'link' => 'javascript:void(0)',
+            'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
+            'permission' => '',
+            'position' => 0,
+        ]);
+
+        Panelio::addMenu('pax', 'sell', [
+            'type' => 'link',
+            'name' => 'pax::base.sections.sell.menus.invoices',
+            'link' => 'javascript:void(0)',
+            'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
+            'permission' => '',
+            'position' => 0,
+        ]);
+
+        Panelio::addMenu('pax', 'sell', [
             'type' => 'group',
             'name' => 'pax::base.sections.sell.menus.group_advertising_and_marketing',
+            'permission' => '',
+            'position' => 100,
+        ]);
+
+        Panelio::addMenu('pax', 'sell', [
+            'type' => 'link',
+            'name' => 'pax::base.sections.sell.menus.advertising',
+            'link' => 'javascript:void(0)',
+            'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
+            'permission' => '',
+            'position' => 100,
+        ]);
+
+        Panelio::addMenu('pax', 'sell', [
+            'type' => 'link',
+            'name' => 'pax::base.sections.sell.menus.campaigns',
+            'link' => 'javascript:void(0)',
+            'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
             'permission' => '',
             'position' => 100,
         ]);
@@ -179,11 +213,20 @@ class AddPanelMenuListeners
 
         Panelio::addMenu('pax', 'account', [
             'type' => 'link',
-            'name' => 'pax::base.sections.account.menus.pax_group_customer',
+            'name' => 'pax::base.sections.account.menus.customers',
+            'link' => 'javascript:void(0)',
+            'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
+            'permission' => '',
+            'position' => 105,
+        ]);
+
+        Panelio::addMenu('pax', 'account', [
+            'type' => 'link',
+            'name' => 'pax::base.sections.account.menus.customer_group',
             'link' => route('taxonomy.{type}.index', [
                 'panel' => 'pax',
                 'section' => 'account',
-                'type' => 'pax.group_customer',
+                'type' => 'pax.customer_group',
             ]),
             'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
             'permission' => '',
@@ -191,6 +234,19 @@ class AddPanelMenuListeners
         ]);
 
         // added group menu for system section
+        Panelio::addMenu('pax', 'system', [
+            'type' => 'link',
+            'name' => 'pax::base.sections.system.menus.configuration',
+            'link' => route('setting.{type}.index', [
+                'panel' => 'pax',
+                'section' => 'system',
+                'type' => 'pax_config',
+            ]),
+            'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
+            'permission' => '',
+            'position' => 0,
+        ]);
+
         Panelio::addMenu('pax', 'system', [
             'type' => 'group',
             'name' => 'pax::base.sections.system.menus.group_plugins_and_modules',
