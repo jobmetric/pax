@@ -84,7 +84,10 @@ class AddPanelMenuListeners
         Panelio::addMenu('pax', 'content', [
             'type' => 'link',
             'name' => 'pax::base.sections.content.menus.currencies',
-            'link' => 'javascript:void(0)',
+            'link' => route('product-assets.index', [
+                'panel' => 'pax',
+                'section' => 'content',
+            ]),
             'icon' => '<i class="ki-duotone ki-note-2 {class}"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>',
             'permission' => '',
             'position' => 5,
