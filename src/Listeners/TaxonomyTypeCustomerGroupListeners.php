@@ -3,11 +3,11 @@
 namespace JobMetric\Pax\Listeners;
 
 use JobMetric\CustomField\CustomFieldBuilder;
-use JobMetric\Media\Typeify\MediaBuilder;
-use JobMetric\Metadata\Typeify\MetadataBuilder;
+use JobMetric\Media\Support\MediaBuilder;
+use JobMetric\Metadata\Support\MetadataBuilder;
 use JobMetric\Pax\Events\PaxBootEvent;
-use JobMetric\Taxonomy\Facades\TaxonomyType;
-use JobMetric\Translation\Typeify\TranslationBuilder;
+use JobMetric\Taxonomy\Facades\TaxonomyTypeRegistry;
+use JobMetric\Translation\Support\TranslationBuilder;
 use Throwable;
 
 class TaxonomyTypeCustomerGroupListeners
@@ -19,7 +19,7 @@ class TaxonomyTypeCustomerGroupListeners
     public function handle(PaxBootEvent $event): void
     {
         // customer_group
-        TaxonomyType::define('pax.customer_group')
+        TaxonomyTypeRegistry::register('pax.customer_group')
             ->label('pax::base.taxonomy_type.customer_group.label')
             ->description('pax::base.taxonomy_type.customer_group.description')
             ->showDescriptionInList()

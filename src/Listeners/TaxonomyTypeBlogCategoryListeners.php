@@ -3,11 +3,11 @@
 namespace JobMetric\Pax\Listeners;
 
 use JobMetric\CustomField\CustomFieldBuilder;
-use JobMetric\Media\Typeify\MediaBuilder;
-use JobMetric\Metadata\Typeify\MetadataBuilder;
+use JobMetric\Media\Support\MediaBuilder;
+use JobMetric\Metadata\Support\MetadataBuilder;
 use JobMetric\Pax\Events\PaxBootEvent;
-use JobMetric\Taxonomy\Facades\TaxonomyType;
-use JobMetric\Translation\Typeify\TranslationBuilder;
+use JobMetric\Taxonomy\Facades\TaxonomyTypeRegistry;
+use JobMetric\Translation\Support\TranslationBuilder;
 use Throwable;
 
 class TaxonomyTypeBlogCategoryListeners
@@ -19,7 +19,7 @@ class TaxonomyTypeBlogCategoryListeners
     public function handle(PaxBootEvent $event): void
     {
         // blog_category
-        TaxonomyType::define('pax.blog_category')
+        TaxonomyTypeRegistry::register('pax.blog_category')
             ->label('pax::base.taxonomy_type.blog_category.label')
             ->description('pax::base.taxonomy_type.blog_category.description')
             ->showDescriptionInList()

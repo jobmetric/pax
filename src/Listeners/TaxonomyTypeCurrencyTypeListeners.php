@@ -3,11 +3,11 @@
 namespace JobMetric\Pax\Listeners;
 
 use JobMetric\CustomField\CustomFieldBuilder;
-use JobMetric\Media\Typeify\MediaBuilder;
-use JobMetric\Metadata\Typeify\MetadataBuilder;
+use JobMetric\Media\Support\MediaBuilder;
+use JobMetric\Metadata\Support\MetadataBuilder;
 use JobMetric\Pax\Events\PaxBootEvent;
-use JobMetric\Taxonomy\Facades\TaxonomyType;
-use JobMetric\Translation\Typeify\TranslationBuilder;
+use JobMetric\Taxonomy\Facades\TaxonomyTypeRegistry;
+use JobMetric\Translation\Support\TranslationBuilder;
 use Throwable;
 
 class TaxonomyTypeCurrencyTypeListeners
@@ -19,7 +19,7 @@ class TaxonomyTypeCurrencyTypeListeners
     public function handle(PaxBootEvent $event): void
     {
         // currency_type
-        TaxonomyType::define('pax.currency_type')
+        TaxonomyTypeRegistry::register('pax.currency_type')
             ->label('pax::base.taxonomy_type.currency_type.label')
             ->description('pax::base.taxonomy_type.currency_type.description')
             ->showDescriptionInList()
