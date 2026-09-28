@@ -20,8 +20,8 @@ class TaxonomyTypeCurrencyTagListeners
             ->description('pax::base.taxonomy_type.currency_tag.description')
             ->showDescriptionInList()
             ->changeStatusInList()
-            ->importInList()
-            ->exportInList()
+            ->import()
+            ->export()
             ->seoTranslation()
             ->url()
             ->baseMedia();
